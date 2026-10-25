@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth, homePathFor } from '../../context/AuthContext';
 import { Button, Input, Field, Alert } from '../../components/ui';
-import { Building2, LogIn } from 'lucide-react';
+import { Building2, LogIn, Settings } from 'lucide-react';
 
 export default function SignIn() {
   const { login } = useAuth();
@@ -57,7 +57,7 @@ export default function SignIn() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com"
                 required
-                className="bg-slate-900 border-slate-700 text-black"
+                className="bg-slate-900 border-slate-700 text-white placeholder-slate-500"
               />
             </Field>
 
@@ -68,7 +68,7 @@ export default function SignIn() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="bg-slate-900 border-slate-700 text-black"
+                className="bg-slate-900 border-slate-700 text-white placeholder-slate-500"
               />
             </Field>
 
@@ -83,6 +83,21 @@ export default function SignIn() {
               </Button>
             </div>
           </form>
+
+          {/* Setup Page Navigation Link */}
+          <div className="mt-6 pt-5 border-t border-slate-700/60 text-center">
+            <p className="text-xs text-slate-400 mb-2">
+              First-time setting up your organization?
+            </p>
+            <Link
+              to="/setup"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors duration-150"
+            >
+              <Settings className="h-3.5 w-3.5" />
+              <span>Initialize System / Admin Setup</span>
+            </Link>
+          </div>
+
         </div>
       </div>
     </div>
