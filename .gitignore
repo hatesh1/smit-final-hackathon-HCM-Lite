@@ -1,0 +1,17 @@
+# Dependencies (Heavy files)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Local Database (Embedded MongoDB data)
+.mongo-data/
+server/.mongo-data/
+
+# Environment / Secret files
+.env
+client/.env
+server/.env
+
+# Build outputs
+dist/
+build/
